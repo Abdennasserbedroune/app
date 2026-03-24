@@ -1,4 +1,5 @@
 import router from '@ohos.router'
+import display from '@ohos.display'
 import { Colors, FontFamily, Spacing, Radius, Shadows, Motion } from '../design/DesignSystem'
 import { IngredientChip } from '../components/IngredientChip'
 
@@ -18,6 +19,8 @@ struct FridgePage {
   @State suggestionsOpacity: number = 0
   @State ctaOpacity: number = 0
   @State ctaTranslateY: number = 40
+
+  private screenWidth: number = px2vp(display.getDefaultDisplaySync().width)
 
   private readonly SUGGESTIONS: string[] = [
     'Eggs', 'Tomato', 'Rice', 'Onion', 'Garlic',
@@ -217,7 +220,7 @@ struct FridgePage {
         .height(56)
         .borderRadius(Radius.full)
         .backgroundColor(this.ingredients.length > 0 ? Colors.accent : Colors.bgSubtle)
-        .fontColor(Colors.textPrimary)
+        .fontColor('#FFFFFF')
         .fontFamily(FontFamily.dmSansMedium)
         .fontSize(16)
         .enabled(this.ingredients.length > 0)
@@ -229,7 +232,8 @@ struct FridgePage {
       Blank().height(Spacing.lg)
 
     }
-    .width('100%')
+    .width(this.screenWidth >= 600 ? 560 : '100%')
+    .alignSelf(this.screenWidth >= 600 ? ItemAlign.Center : ItemAlign.Start)
     .height('100%')
     .backgroundColor(Colors.bgPrimary)
     .padding({ left: Spacing.lg, right: Spacing.lg })

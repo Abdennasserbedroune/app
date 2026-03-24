@@ -1,0 +1,7 @@
+# Font binary files go here.
+# Run scripts/download_fonts.sh to populate this folder.
+# Files expected:
+#   PlayfairDisplay-Bold.ttf
+#   DMSerifDisplay-Regular.ttf
+#   DMSans-Regular.ttf
+#   DMSans-Medium.ttf

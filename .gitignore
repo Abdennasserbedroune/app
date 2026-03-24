@@ -1,0 +1,15 @@
+# Node
+node_modules/
+
+# Build outputs
+build/
+.preview/
+oh_modules/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Font binaries — download with: bash scripts/download_fonts.sh
+entry/src/main/resources/rawfile/fonts/*.ttf
